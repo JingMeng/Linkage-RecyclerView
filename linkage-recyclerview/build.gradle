@@ -5,16 +5,21 @@ apply plugin: 'com.android.library'
 def theVersionName = "1.8.4"
 
 android {
-    compileSdkVersion 28
+    namespace 'com.kunminx.linkage'
+    compileSdk 34
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
 
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 28
+        minSdk 15
+        targetSdk 34
         versionCode 10804
         versionName theVersionName
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -23,6 +28,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    
     }
 }
 
@@ -36,3 +42,5 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha06'
     implementation 'com.google.android.material:material:1.1.0-alpha07'
 }
+
+
